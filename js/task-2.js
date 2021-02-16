@@ -1,3 +1,4 @@
+"use strict";
 const ingredients = [
     'Картошка',
     'Грибы',
@@ -6,7 +7,14 @@ const ingredients = [
     'Зелень',
     'Приправы',
   ];
-  const newList = document.createElement('li')
-    newList.map(ingredients);
-  newList.textContent = ingredients.forEach(ingredients);
-  console.log(newList);
+
+let ulList = document.getElementById("ingredients");
+const newList = ingredients.forEach(ingredient=>{
+  let elementUl = document.createElement('li');
+  elementUl.innerHTML = ingredient;
+  // ulList.append(elementUl);
+   console.log(elementUl);
+  });
+  // console.log(ulList);
+
+  
