@@ -15,3 +15,13 @@ const images = [
       alt: 'Group of Horses Running',
     },
   ];
+
+  const totalGallery = ({ url, alt }) =>
+  `<li><img src="${url}" alt="${alt}" width = 200 height = 150></li>`;
+const galleryGroup = images.reduce(
+  (acc, item) => acc + totalGallery(item),
+  ""
+);
+const galleryList = document.querySelector("#gallery");
+galleryList.insertAdjacentHTML("afterbegin", galleryGroup);
+galleryList.setAttribute("style", "list-style-type:none; display: flex;");
